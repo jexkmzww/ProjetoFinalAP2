@@ -5,6 +5,7 @@
  */
 package projetofinal;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 
 import java.io.FileOutputStream;
@@ -47,6 +48,10 @@ public class MovieDetails extends javax.swing.JPanel {
         labelNacionalidade.setText(movie.getNacionalidade());
         labelSinopse.setText("SINOPSE VEM AQUI MANO");
         labelPreco.setText(String.valueOf(movie.calculaPreco(user.isPremium())));
+        
+        if (user.isPremium()){
+            labelPreco.setForeground(Color.GREEN);
+        }
 
         ImageIcon image = new ImageIcon(getClass().getResource(movie.getImage()));
         labelMovie.setIcon(image);
